@@ -11,7 +11,7 @@ require('dotenv').config();
 
 // Routes
 app.use('/', require('./routes/HomeRoutes'))
-app.use('/api/contacts', require('./routes/ContactsRoutes'))
+app.use('/contacts', require('./routes/ContactsRoutes'))
 
 
 // Start App
