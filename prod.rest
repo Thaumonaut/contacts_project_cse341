@@ -3,5 +3,5 @@ GET https://contacts-project-cse341-ig63.onrender.com/contacts
 
 
 ### GET contact with id of 1
-GET https://contacts-project-cse341-ig63.onrender.com/api/contacts/1
+GET https://contacts-project-cse341-ig63.onrender.com/contacts/1
 
