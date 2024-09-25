@@ -1,13 +1,18 @@
 const mongodb = require('../data/database')
 const db = mongodb.getDatabase().collection('contacts');
 
+
 const getAllContacts = (req, res) => {
+   // #swagger.tags = ['Users']
+  // #swagger.description = 'Get all contacts from database'
   db.find().toArray().then((data) => {
     res.json(data)
   })
 }
 
 const getContactById = (req, res) => {
+   // #swagger.tags = ['Users']
+   // #swagger.description = 'Get contact with id'
   db.findOne({_id: parseInt(req.params.id)}).then((data) => {
     if(!data) {
       res.status(404).json({message: 'Contact not found'})
@@ -19,6 +24,20 @@ const getContactById = (req, res) => {
 }
 
 const createContact = (req, res) => {
+  /**
+   * #swagger.tags = ['Users']
+   * #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'User data.',
+            required: true,
+            schema: {
+                firstName: "John",
+                lastName: "Doe",
+                favoriteColor: "blue",
+                birthday: "Wed, 21 Oct 2015 18:27:50 GMT"
+            }
+        }
+   */
   const id = req.body._id;
 
   if(!id) {
@@ -42,12 +61,27 @@ const createContact = (req, res) => {
 }
 
 const deleteContact = (req, res) => {
+   //#swagger.tags=['Users']
   db.deleteOne({_id: parseInt(req.params.id)}).then((data) => {
     res.json(data)
   })
 }
 
 const updateContact = (req, res) => {
+  /**
+   * #swagger.tags = ['Users']
+   * #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'User data.',
+            required: true,
+            schema: {
+                firstName: "John",
+                lastName: "Doe",
+                favoriteColor: "blue",
+                birthday: "Wed, 21 Oct 2015 18:27:50 GMT"
+            }
+        }
+   */
   db.updateOne({_id: parseInt(req.params.id)}, {$set: req.body}).then((data) => {
     res.json(data)
   })

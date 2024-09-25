@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Get Database
 const db = require('./data/database')
@@ -12,14 +13,15 @@ require('dotenv').config();
 // Start App
 const port = process.env.PORT || 3000;
 
+app.use(cors())
+app.use(bodyParser.json())
+
 db.InitializeDB((err, db) => {
   if (err) {
     console.log(err.message)
     return
   }
   console.log('Database Initialized.')
-
-  app.use(bodyParser.json())
 
   // Routes
   app.use('/', require('./routes/HomeRoutes'))

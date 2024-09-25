@@ -1,10 +1,14 @@
-const express = require('express')
-const route = express.Router();
+const router = require('express').Router();
+const swaggerUi = require('swagger-ui-express');
 
-const mongodb = require('../data/database')
+const swaggerDocs = require('../utils/swagger/swagger-output.json')
 
-route.get('/', (req, res) => {
+router.get('/', (req, res) => {
+  // #swagger.ignore = true
   res.send('API Home route. Go to /contacts to see all contacts.')
 })
 
-module.exports = route;
+router.use('/api', swaggerUi.serve)
+router.get('/api', swaggerUi.setup(swaggerDocs) /* #swagger.ignore = true*/)
+
+module.exports = router;
