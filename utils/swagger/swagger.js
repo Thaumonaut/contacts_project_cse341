@@ -2,8 +2,9 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
-    description: 'Description'
+    title: 'Contacts API',
+    description: 'Save, Update, Delete and Retrieve contacts stored in a MongoDB database',
+    version: '0.2.0'
   },
   schemes: ['http', 'https'],
   host: 'contacts-project-cse341-ig63.onrender.com'
