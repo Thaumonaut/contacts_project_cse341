@@ -1,7 +1,28 @@
 ### Get all Contacts
 GET https://contacts-project-cse341-ig63.onrender.com/contacts
 
+### Create contact with id 11
+POST http://contacts-project-cse341-ig63.onrender.com/contacts
+content-type: application/json
+
+{
+    "_id": 11,
+    "firstName": "James",
+    "lastName": "Brown",
+    "favoriteColor": "blue",
+    "birthday": "2015-20-21T18:27:50:000Z"
+}
+
+### Update contact with id 11
+PUT http://contacts-project-cse341-ig63.onrender.com/contacts/11
+Content-Type: application/json
+
+{
+    "lastName": "West"
+}
 
 ### GET contact with id of 1
-GET https://contacts-project-cse341-ig63.onrender.com/contacts/1
+GET https://contacts-project-cse341-ig63.onrender.com/contacts/11
 
+### Delete contact with id 11
+DELETE http://contacts-project-cse341-ig63.onrender.com/contacts/11
