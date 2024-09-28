@@ -14,7 +14,7 @@
     "/contacts/": {
       "get": {
         "tags": [
-          "Users"
+          "Contacts"
         ],
         "description": "Get all contacts from database",
         "responses": {
@@ -25,7 +25,7 @@
       },
       "post": {
         "tags": [
-          "Users"
+          "Contacts"
         ],
         "description": "",
         "parameters": [
@@ -70,7 +70,7 @@
     "/contacts/{id}": {
       "get": {
         "tags": [
-          "Users"
+          "Contacts"
         ],
         "description": "Get contact with id",
         "parameters": [
@@ -92,7 +92,7 @@
       },
       "delete": {
         "tags": [
-          "Users"
+          "Contacts"
         ],
         "description": "",
         "parameters": [
@@ -111,7 +111,7 @@
       },
       "put": {
         "tags": [
-          "Users"
+          "Contacts"
         ],
         "description": "",
         "parameters": [

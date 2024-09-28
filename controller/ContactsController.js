@@ -3,7 +3,7 @@ const db = mongodb.getDatabase().collection('contacts');
 
 
 const getAllContacts = (req, res) => {
-   // #swagger.tags = ['Users']
+   // #swagger.tags = ['Contacts']
   // #swagger.description = 'Get all contacts from database'
   db.find().toArray().then((data) => {
     res.json(data)
@@ -11,7 +11,7 @@ const getAllContacts = (req, res) => {
 }
 
 const getContactById = (req, res) => {
-   // #swagger.tags = ['Users']
+   // #swagger.tags = ['Contacts']
    // #swagger.description = 'Get contact with id'
   db.findOne({_id: parseInt(req.params.id)}).then((data) => {
     if(!data) {
@@ -25,7 +25,7 @@ const getContactById = (req, res) => {
 
 const createContact = (req, res) => {
   /**
-   * #swagger.tags = ['Users']
+   * #swagger.tags = ['Contacts']
    * #swagger.parameters['body'] = {
             in: 'body',
             description: 'User data.',
@@ -61,7 +61,7 @@ const createContact = (req, res) => {
 }
 
 const deleteContact = (req, res) => {
-   //#swagger.tags=['Users']
+   //#swagger.tags=['Contacts']
   db.deleteOne({_id: parseInt(req.params.id)}).then((data) => {
     res.json(data)
   })
@@ -69,7 +69,7 @@ const deleteContact = (req, res) => {
 
 const updateContact = (req, res) => {
   /**
-   * #swagger.tags = ['Users']
+   * #swagger.tags = ['Contacts']
    * #swagger.parameters['body'] = {
             in: 'body',
             description: 'User data.',
