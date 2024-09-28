@@ -5,10 +5,11 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://contacts-project-cse341-ig63.onrender.com/",
+  "host": "contacts-project-cse341-ig63.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/contacts/": {
